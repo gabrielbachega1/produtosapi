@@ -1,18 +1,29 @@
 package com.example.produtosapi.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "produto") // Opcional quando o nome da classe é igual ao da tabela do banco
 public class Produto {
-    private int id;
+
+    @Id
+    @Column(name = "id") // Opcional quando o nome da variavel é igual ao da coluna do banco
+    private String id;
+    @Column(name = "nome")
     private String nome;
+    @Column(name = "descricao")
     private String descricao;
+    @Column(name = "preco")
     private Double preco;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
